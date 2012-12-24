@@ -4,7 +4,7 @@ Donate link: http://mohsinrasool.wordpress.com/nextgen-flex-slider-template
 Tags: nextgen, gallery, slider, slideshow, nextgen-gallery, template, flexslider
 Requires at least: 3.0.1
 Tested up to: 3.5
-Stable tag: trunk
+Stable tag: 1.0.1
 Author: Mohsin Rasool
 License: GPLv2
 
@@ -57,6 +57,9 @@ Yes, you can. You can not only place links but also can use any HTML tag in the 
 1. screenshot-2.png 
 
 == Changelog ==
+
+= 1.0.1 =
+* Fixed static title problem.
 
 = 1.0 =
 * First Revision

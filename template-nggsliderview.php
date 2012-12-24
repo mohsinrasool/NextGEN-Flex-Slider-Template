@@ -25,7 +25,7 @@ Follow variables are useable :
             </div>
 
             <div class="flex-caption">
-                <h2 class="post-title">Langley, British Columbia</h2>
+                <h2 class="post-title"><?php echo ($image->alttext) ?></h2>
                 <p><?php echo html_entity_decode($image->description) ?></p>
             </div>
 	</li>
