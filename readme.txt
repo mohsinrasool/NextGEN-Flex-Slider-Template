@@ -4,7 +4,7 @@ Donate link: http://mohsinrasool.wordpress.com/nextgen-flex-slider-template
 Tags: nextgen, gallery, slider, slideshow, nextgen-gallery, template, flexslider
 Requires at least: 3.0.1
 Tested up to: 3.5
-Stable tag: 1.0.1
+Stable tag: 1.1
 Author: Mohsin Rasool
 License: GPLv2
 
@@ -12,7 +12,7 @@ This plugin adds "sliderview" template for the NextGen gallery. Use the shortcod
 
 == Description ==
 
-This plugin adds "sliderview" template for the NextGen gallery. Use the shortcode [nggallery id=x template="sliderview"] to display images as the slider. It is available in two colors black and blue.
+This plugin adds "sliderview" template for the NextGen gallery. Use the shortcode [nggallery id=x template="sliderview"] to display images as the slider. You can visit Settings -> NextGen Slider to select theme, toggle between image and content slider and change width of the image or content area.
 
 
 Note: It requires NextGen Gallery plugin that can be downloaded from http://wordpress.org/extend/plugins/nextgen-gallery.
@@ -51,12 +51,23 @@ You would use the photo description and the title text to populate the right sid
 
 Yes, you can. You can not only place links but also can use any HTML tag in the description. But, make sure you HTML is properly formatted. An unclosed tag or quotes may mess up your page.
 
+
+= Is it a content slider or an image slider? =
+
+Both, You can configure it to be either a content slider or an image only slider.
+
+
 == Screenshots ==
 
 1. screenshot-1.png 
-1. screenshot-2.png 
+2. screenshot-2.png 
+3. screenshot-3.png 
+4. screenshot-4.png 
 
 == Changelog ==
+
+= 1.1 =
+* Added Configuration page where user can configure slider options.
 
 = 1.0.1 =
 * Fixed static title problem.

@@ -14,20 +14,24 @@ Follow variables are useable :
 
 ?>
 <?php if (!defined ('ABSPATH')) die ('No direct access allowed'); ?><?php if (!empty ($gallery)) : ?>
+<?
 
+    $display_content = get_option('ng_slider_display_content') ? true: false ;
+?>
 <div id="<?php echo $gallery->anchor ?>" class="flexslider">
    <ul class="slides">
   	<!-- Thumbnails -->
 	<?php foreach ($images as $image) : ?>		
-	<li>
-            <div class="feature-image"> 
+	<li class="<? if(!$display_content) echo 'full-width';?>">
+            <div class="feature-image "> 
                 <img class="full home_feature" src="<?php echo $image->imageURL ?>" alt="<?php echo $image->alttext ?>" title="<?php echo $image->alttext ?>">
             </div>
-
+            <? if($display_content) {?>
             <div class="flex-caption">
                 <h2 class="post-title"><?php echo ($image->alttext) ?></h2>
                 <p><?php echo html_entity_decode($image->description) ?></p>
             </div>
+            <? } ?>
 	</li>
  	<?php endforeach; ?>
   </ul>
@@ -37,11 +41,25 @@ Follow variables are useable :
 <script type="text/javascript" defer="defer">
     jQuery(document).ready(function($) {
       $('.flexslider').flexslider({
+        //animation: "slide",
         slideshowSpeed: 6000,
         directionNav:true,
         pauseOnHover:true
   });
     });	
 </script>
+<style>
+    <?
+    if($display_content){
+        $img_width = get_option('ng_slider_image_width');
+        $txt_width = get_option('ng_slider_text_width');
+        if(is_numeric((int) $img_width) && ((int) $img_width)>1)
+            echo '.flexslider .feature-image {width:'.$img_width.' !important;}';
+        if(is_numeric((int) $txt_width) && ((int) $txt_width)>1)
+            echo '.flexslider .flex-caption {width:'.$txt_width.' !important;}';
+    }
+    ?>
+    
+</style>
 
 <?php endif; ?>
