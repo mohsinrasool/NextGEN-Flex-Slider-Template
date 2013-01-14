@@ -1,10 +1,10 @@
 === NextGEN Flex Slider Template ===
 Contributors: mohsinrasool
 Donate link: http://mohsinrasool.wordpress.com/nextgen-flex-slider-template
-Tags: nextgen, gallery, slider, slideshow, nextgen-gallery, template, flexslider
+Tags: nextgen, gallery, slider, slideshow, nextgen-gallery, template, flexslider, nextgen slider, image slider, content slider, nextgen image slider, nextgen content slider, featured slider, nextgen featured slider
 Requires at least: 3.0.1
 Tested up to: 3.5
-Stable tag: 1.1
+Stable tag: 1.2
 Author: Mohsin Rasool
 License: GPLv2
 
@@ -66,6 +66,9 @@ Both, You can configure it to be either a content slider or an image only slider
 
 == Changelog ==
 
+= 1.2 =
+* Fixed blank screen bug
+
 = 1.1 =
 * Added Configuration page where user can configure slider options.
 
@@ -74,3 +77,8 @@ Both, You can configure it to be either a content slider or an image only slider
 
 = 1.0 =
 * First Revision
+
+== Upgrade Notice ==
+
+= 1.2 =
+Fixes blank screen bug when activated. It may also conflict with another plugin.

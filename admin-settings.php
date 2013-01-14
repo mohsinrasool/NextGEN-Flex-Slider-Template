@@ -5,14 +5,14 @@
  */
 ?>
 <?php
-add_action('admin_menu', 'admin_menu');
+add_action('admin_menu', 'ng_slider_admin_menu');
 
-function admin_menu() {
+function ng_slider_admin_menu() {
     add_options_page('NextGen Slider Options', 'NextGen Slider', 'manage_options', 'ng-slider', 'ng_slider_admin_output');
-    add_action('admin_init', 'register_plugin_settings');
+    add_action('admin_init', 'ng_slider_register_plugin_settings');
 }
 
-function register_plugin_settings() {
+function ng_slider_register_plugin_settings() {
     register_setting('ng_slider_options', 'ng_slider_theme');
     register_setting('ng_slider_options', 'ng_slider_display_content');
     register_setting('ng_slider_options', 'ng_slider_image_width');
