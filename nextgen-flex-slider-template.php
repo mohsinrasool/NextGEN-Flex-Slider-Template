@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: NextGEN Flex Slider Template
-Plugin URI: http://mohsinrasool.wordpress.com/2012/12/21/nextgen-flex-slider-template/
+Plugin URI: http://wpdevsnippets.com/nextgen-flex-image-content-slider-template/
 Description: Add a "sliderview" template for the NextGen gallery. Use the shortcode [nggallery id=x template="sliderview"] to display images as the slider.
 Author: Mohsin Rasool
 Author URI: http://mohsinrasool.wordpress.com
