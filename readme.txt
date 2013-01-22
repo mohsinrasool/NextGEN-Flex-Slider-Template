@@ -14,6 +14,7 @@ Adds "sliderview" template for the NextGen gallery. Use the shortcode [nggallery
 
 This plugin adds "sliderview" template for the NextGen gallery. Use the shortcode [nggallery id=x template="sliderview"] to display images as the slider. You can visit Settings -> NextGen Slider to select theme, toggle between image and content slider and change width of the image or content area.
 
+If you are not sure how to set up this slider please check our tutorial on [creating and using gallery templates](http://wpdevsnippets.com/create-nextgen-gallery-and-templates/ "NextGen Gallery Templates")
 
 Note: It requires NextGen Gallery plugin that can be downloaded from http://wordpress.org/extend/plugins/nextgen-gallery.
 
@@ -51,11 +52,13 @@ You would use the photo description and the title text to populate the right sid
 
 Yes, you can. You can not only place links but also can use any HTML tag in the description. But, make sure you HTML is properly formatted. An unclosed tag or quotes may mess up your page.
 
-
 = Is it a content slider or an image slider? =
 
 Both, You can configure it to be either a content slider or an image only slider.
 
+= How to add the images in slider? =
+
+Please check out our tutorial on how to use [NextGen Gallery Templates](http://wpdevsnippets.com/create-nextgen-gallery-and-templates/ "NextGen Gallery Templates") and set up slider for it.
 
 == Screenshots ==
 
