@@ -8,7 +8,7 @@ Stable tag: 1.2
 Author: Mohsin Rasool
 License: GPLv2
 
-This plugin adds "sliderview" template for the NextGen gallery. Use the shortcode [nggallery id=x template="sliderview"]
+Adds "sliderview" template for the NextGen gallery. Use the shortcode [nggallery id=x template="sliderview"]
 
 == Description ==
 
@@ -59,10 +59,10 @@ Both, You can configure it to be either a content slider or an image only slider
 
 == Screenshots ==
 
-1. screenshot-1.png 
-2. screenshot-2.png 
-3. screenshot-3.png 
-4. screenshot-4.png 
+1. Content Slider
+2. Image Slider
+3. Slider Settings in Administration Panel
+4. Populating Content for images
 
 == Changelog ==
 

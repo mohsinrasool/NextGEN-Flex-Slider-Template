@@ -52,7 +52,10 @@ function ng_slider_theme_code() {
 
 function ng_slider_admin_output() {
     ?>
-    <div class="wrap">
+        <div id="dashboard-widgets" class="metabox-holder">
+            <div id="post-body">
+                <div id="dashboard-widgets-main-content">
+                    <div class="postbox-container" id="main-container" style="width:75%;">
         <h2>NextGen Slider Options</h2>
         <form method="post" action="options.php">
             <?php
@@ -62,6 +65,39 @@ function ng_slider_admin_output() {
             <p class="submit"><input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" /></p>
         </form>
     </div>
+                    </div>
+                    <div class="postbox-container" id="side-container" style="width:24%;">
+                        <div id="right-sortables" class="meta-box-sortables ui-sortable"><div id="ngg_meta_box" class="postbox ">
+                                <div class="handlediv" title="Click to toggle"><br></div><h3 class="hndle"><span>Do you like this Plugin?</span></h3>
+                                <div class="inside">
+                                    <p>Any kind of contribution would be highly appreciated. Thanks!</p>
+                                    <ul>
+                                         <li style="padding-left: 30px; min-height:30px; min-height:30px;line-height: 30px;  background:transparent url(http://wpdevsnippets.com/plugin-images/icon_thumb_up.png) no-repeat scroll center left; text-decoration: none;">
+                                             <a href="http://wordpress.org/extend/plugins/nextgen-flex-slider-template/" target="_blank">Give it a good rating on WordPress.org</a>
+                                         </li>
+                                         <li style="padding-left: 30px; min-height:30px; min-height:30px;line-height: 30px; background:transparent url(http://wpdevsnippets.com/plugin-images/icon_wordpress_blue.png) no-repeat scroll center left; text-decoration: none;">
+                                             <a href="http://wordpress.org/extend/plugins/nextgen-flex-slider-template/" target="_blank">Visit the WordPress plugin homepage</a>
+                                         </li>
+                                         <li style="padding-left: 30px; min-height:30px;line-height: 30px; background:transparent url(http://wpdevsnippets.com/plugin-images/icon_doc_find.png) no-repeat scroll center left; text-decoration: none;">
+                                             <a href="http://wpdevsnippets.com/nextgen-3d-2d-animated-flux-slider-template/" target="_blank"><strong>Visit the Documentation page</strong></a>
+                                         </li>
+                                         <li style="padding-left: 30px; min-height:30px;line-height: 30px; background:transparent url(http://wpdevsnippets.com/plugin-images/icon_person_help.png) no-repeat scroll center left; text-decoration: none;">
+                                             <a href="http://wordpress.org/support/plugin/nextgen-flex-slider-template" target="_blank">Report a bug </a>
+                                         </li>
+                                    </ul>
+                                    <div class="social" style="text-align:center;margin:15px 0 10px 0;">
+                                        <span class="social" style="margin-right:5px;"><a target="_blank" href="http://twitter.com/WPDevSnippets">
+                                                <img title="Follow Us on Twitter" alt="Twitter" src="http://wpdevsnippets.com/plugin-images/icon_twitter.png"></a></span>
+                                    <span class="social" style="margin-right:5px;"><a target="_blank" href="http://www.facebook.com/WPDevSnippets"><img title="Like Us on Facebook" alt="Facebook" src="http://wpdevsnippets.com/plugin-images/icon_fb.png"></a></span>
+                                    <span class="social"><a target="_blank" href="https://plus.google.com/116192363608271504785"><img title="Add Us to your circles" alt="GooglePlus" src="http://wpdevsnippets.com/plugin-images/icon_gplus.png"></a></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     <?php
 }
 
