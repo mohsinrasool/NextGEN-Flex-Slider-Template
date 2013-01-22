@@ -79,7 +79,7 @@ function ng_slider_admin_output() {
                                              <a href="http://wordpress.org/extend/plugins/nextgen-flex-slider-template/" target="_blank">Visit the WordPress plugin homepage</a>
                                          </li>
                                          <li style="padding-left: 30px; min-height:30px;line-height: 30px; background:transparent url(http://wpdevsnippets.com/plugin-images/icon_doc_find.png) no-repeat scroll center left; text-decoration: none;">
-                                             <a href="http://wpdevsnippets.com/nextgen-3d-2d-animated-flux-slider-template/" target="_blank"><strong>Visit the Documentation page</strong></a>
+                                             <a href="http://wpdevsnippets.com/nextgen-flex-image-content-slider-template/" target="_blank"><strong>Visit the Documentation page</strong></a>
                                          </li>
                                          <li style="padding-left: 30px; min-height:30px;line-height: 30px; background:transparent url(http://wpdevsnippets.com/plugin-images/icon_person_help.png) no-repeat scroll center left; text-decoration: none;">
                                              <a href="http://wordpress.org/support/plugin/nextgen-flex-slider-template" target="_blank">Report a bug </a>
