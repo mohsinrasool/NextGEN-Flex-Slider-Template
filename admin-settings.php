@@ -17,11 +17,24 @@ function ng_slider_register_plugin_settings() {
     register_setting('ng_slider_options', 'ng_slider_display_content');
     register_setting('ng_slider_options', 'ng_slider_image_width');
     register_setting('ng_slider_options', 'ng_slider_text_width');
+    register_setting('ng_slider_options', 'ng_slider_slideshow_speed');
+    register_setting('ng_slider_options', 'ng_slider_order');
+    //register_setting('ng_slider_options', 'ng_slider_direction');
+    //register_setting('ng_slider_options', 'ng_slider_animation');
+    register_setting('ng_slider_options', 'ng_slider_direction_nav');
+    register_setting('ng_slider_options', 'ng_slider_pagination');
+        
     add_settings_section('ng_slider_general_options', 'General Options', 'ng_slider_general_options_code', 'ng_slider_general_options');
     add_settings_field('ng_slider_theme', 'Theme', 'ng_slider_theme_code', 'ng_slider_general_options', 'ng_slider_general_options');
     add_settings_field('ng_slider_display_content', 'Display', 'ng_slider_display_content_code', 'ng_slider_general_options', 'ng_slider_general_options');
     add_settings_field('ng_slider_image_width', 'Image Width', 'ng_slider_image_width_code', 'ng_slider_general_options', 'ng_slider_general_options');
     add_settings_field('ng_slider_text_width', 'Content Width', 'ng_slider_text_width_code', 'ng_slider_general_options', 'ng_slider_general_options');
+    add_settings_field('ng_slider_slideshow_speed', 'Animatin Speed/Delay', 'ng_slider_slideshow_speed_code', 'ng_slider_general_options', 'ng_slider_general_options');
+    add_settings_field('ng_slider_order', 'Order', 'ng_slider_order_code', 'ng_slider_general_options', 'ng_slider_general_options');
+    //add_settings_field('ng_slider_direction', 'Sliding Direction', 'ng_slider_direction_code', 'ng_slider_general_options', 'ng_slider_general_options');
+    //add_settings_field('ng_slider_animation', 'Animation Type', 'ng_slider_animation', 'ng_slider_general_options', 'ng_slider_general_options');
+    add_settings_field('ng_slider_direction_nav', 'Next/Prev Navigation', 'ng_slider_direction_nav', 'ng_slider_general_options', 'ng_slider_general_options');
+    add_settings_field('ng_slider_pagination', 'Pagination Navigation', 'ng_slider_pagination', 'ng_slider_general_options', 'ng_slider_general_options');
 
 }
 
@@ -32,8 +45,49 @@ function ng_slider_general_options_code() {
 function ng_slider_image_width_code() {
     echo '<input id="ng_slider_image_width" name="ng_slider_image_width" type="text" value="' . get_option("ng_slider_image_width") . '" /> e.g. any valid width value. 300px, 100% etc<br />';
 }
+function ng_slider_slideshow_speed_code() {
+    echo '<input id="ng_slider_slideshow_speed" name="ng_slider_slideshow_speed" type="text" value="' . get_option("ng_slider_slideshow_speed") . '" /> e.g. Animation speed in seconds.<br />';
+}
+
 function ng_slider_text_width_code() {
     echo '<input id="ng_slider_text_width" name="ng_slider_text_width" type="text" value="' . get_option("ng_slider_text_width") . '" /> e.g. any valid width value. 300px, 100% etc<br />';
+}
+
+function ng_slider_theme_code() {
+    
+    echo '<label><input id="ng_slider_display_content1" name="ng_slider_theme" type="radio" value="0" ' . checked(get_option("ng_slider_theme"), '0', false ) . ' /> Black</label><br />';
+    echo '<label><input id="ng_slider_display_content3" name="ng_slider_theme" type="radio" value="1" ' . checked( get_option("ng_slider_theme"), '1', false ) . ' /> Blue</label><br />';
+}
+
+function ng_slider_animation() {
+    
+    echo '<label><input id="ng_slider_animation1" name="ng_slider_animation" type="radio" value="fade" ' . checked(get_option("ng_slider_animation"), 'fade', false ) . ' /> Fade</label><br />';
+    echo '<label><input id="ng_slider_animation2" name="ng_slider_animation" type="radio" value="slide" ' . checked( get_option("ng_slider_animation"), 'slide', false ) . ' /> Slide</label><br />';
+}
+function ng_slider_pagination() {
+    
+    echo '<label><input id="ng_slider_pagination1" name="ng_slider_pagination" type="radio" value="0" ' . checked(get_option("ng_slider_pagination"), '0', false ) . ' /> No Pagination</label><br />';
+    echo '<label><input id="ng_slider_pagination2" name="ng_slider_pagination" type="radio" value="bullet" ' . checked( get_option("ng_slider_pagination"), 'bullet', false ) . ' /> Bullet Pagination</label><br />';
+}
+
+function ng_slider_direction_nav() {
+    
+    echo '<label><input id="ng_slider_direction_nav2" name="ng_slider_direction_nav" type="radio" value="1" ' . checked( get_option("ng_slider_direction_nav"), '1', false ) . ' /> Yes</label><br />';
+    echo '<label><input id="ng_slider_direction_nav1" name="ng_slider_direction_nav" type="radio" value="0" ' . checked(get_option("ng_slider_direction_nav"), '0', false ) . ' /> No</label><br />';
+}
+
+function ng_slider_order_code() {
+    
+    echo '<label><input id="ng_slider_order1" name="ng_slider_order" type="radio" value="0" ' . checked(get_option("ng_slider_order"), 0, false ) . ' /> Default</label><br />';
+    echo '<label><input id="ng_slider_order2" name="ng_slider_order" type="radio" value="reverse" ' . checked( get_option("ng_slider_order"), 'reverse', false ) . ' /> Reverse</label><br />';
+    echo '<label><input id="ng_slider_order3" name="ng_slider_order" type="radio" value="random" ' . checked( get_option("ng_slider_order"), 'random', false ) . ' /> Random</label><br />';
+}
+
+function ng_slider_direction_code() {
+    
+    echo '<label>Visible for "slide" animation only.</label><br />';
+    echo '<label><input id="ng_slider_direction1" name="ng_slider_direction" type="radio" value="horizontal" ' . checked(get_option("ng_slider_direction"), 'horizontal', false ) . ' /> Horizontal</label><br />';
+    echo '<label><input id="ng_slider_direction2" name="ng_slider_direction" type="radio" value="vertical" ' . checked( get_option("ng_slider_direction"), 'vertical', false ) . ' /> Vertical</label><br />';
 }
 
 function ng_slider_display_content_code() {
@@ -43,12 +97,6 @@ function ng_slider_display_content_code() {
     echo '<label><input id="ng_slider_display_content3" name="ng_slider_display_content" type="radio" value="1" ' . checked( get_option("ng_slider_display_content"), 1, false ) . ' />Image and Content Both</label><br />';
 }
 
-function ng_slider_theme_code() {
-    $options = get_option('ng_slider_options');
-    
-    echo '<label><input id="ng_slider_display_content1" name="ng_slider_theme" type="radio" value="0" ' . checked(get_option("ng_slider_theme"), 0, false ) . ' />Black</label><br />';
-    echo '<label><input id="ng_slider_display_content3" name="ng_slider_theme" type="radio" value="1" ' . checked( get_option("ng_slider_theme"), 1, false ) . ' />Blue</label><br />';
-}
 
 function ng_slider_admin_output() {
     ?>
@@ -97,7 +145,6 @@ function ng_slider_admin_output() {
                     </div>
                 </div>
             </div>
-        </div>
     <?php
 }
 

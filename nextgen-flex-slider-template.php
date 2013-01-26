@@ -5,7 +5,7 @@ Plugin URI: http://wpdevsnippets.com/nextgen-flex-image-content-slider-template/
 Description: Add a "sliderview" template for the NextGen gallery. Use the shortcode [nggallery id=x template="sliderview"] to display images as the slider.
 Author: Mohsin Rasool
 Author URI: http://wpdevsnippets.com
-Version: 1.2
+Version: 1.3
 */
 
 include 'admin-settings.php';
@@ -46,3 +46,24 @@ if (!class_exists('nggSliderview')) {
     add_action( 'plugins_loaded', create_function( '', 'global $nggSliderview; $nggSliderview = new nggSliderview();' ) );
 
 }
+
+// Plugin Activation Hook
+function nggFlexSliderview_activate(){
+    // Check if its a first install
+    if(!get_option('ng_slider_theme'))
+        add_option( 'ng_slider_theme', '0');
+    if(!get_option('ng_slider_display_content'))
+        add_option( 'ng_slider_display_content', '0' );
+    if(!get_option('ng_slider_slideshow_speed'))
+        add_option( 'ng_slider_slideshow_speed', '7' );
+    if(!get_option('ng_slider_order'))
+        add_option( 'ng_slider_order', '0' );
+    //if(!get_option('ng_slider_direction'))
+        //add_option( 'ng_slider_direction', 'horizontal' );
+    if(!get_option('ng_slider_direction_nav'))
+        add_option( 'ng_slider_direction_nav', '1' );
+    if(!get_option('ng_slider_animation'))
+        add_option( 'ng_slider_animation', 'bullet' );
+    
+}
+register_activation_hook( __FILE__, 'nggFlexSliderview_activate' );

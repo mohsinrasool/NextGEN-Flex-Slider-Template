@@ -4,7 +4,7 @@ Donate link: http://mohsinrasool.wordpress.com/2012/12/21/nextgen-flex-slider-te
 Tags: nextgen, gallery, slider, slideshow, nextgen-gallery, template, flexslider, nextgen slider, image slider, content slider, nextgen image slider, nextgen content slider, featured slider, nextgen featured slider
 Requires at least: 3.0.1
 Tested up to: 3.5
-Stable tag: 1.2
+Stable tag: 1.3
 Author: Mohsin Rasool
 License: GPLv2
 
@@ -14,7 +14,7 @@ Adds "sliderview" template for the NextGen gallery. Use the shortcode [nggallery
 
 This plugin adds "sliderview" template for the NextGen gallery. Use the shortcode [nggallery id=x template="sliderview"] to display images as the slider. You can visit Settings -> NextGen Slider to select theme, toggle between image and content slider and change width of the image or content area.
 
-If you are not sure how to set up this slider please check our tutorial on [creating and using gallery templates](http://wpdevsnippets.com/create-nextgen-gallery-and-templates/ "NextGen Gallery Templates")
+If you are not sure how to set up this slider please read our tutorial on [creating and using gallery templates](http://wpdevsnippets.com/create-nextgen-gallery-and-templates/ "NextGen Gallery Templates")
 
 Note: It requires NextGen Gallery plugin that can be downloaded from http://wordpress.org/extend/plugins/nextgen-gallery.
 
@@ -68,6 +68,13 @@ Please check out our tutorial on how to use [NextGen Gallery Templates](http://w
 4. Populating Content for images
 
 == Changelog ==
+
+= 1.3 =
+* Feature of randomization of slides
+* Feature of setting delay between transitions
+* Feature of reverse slides
+* Feature of setting bullet or no pagination navigation
+* Feature of toggling next/prev slide navigation
 
 = 1.2 =
 * Fixed blank screen bug

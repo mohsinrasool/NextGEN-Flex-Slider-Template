@@ -17,6 +17,8 @@ Follow variables are useable :
 <?
 
     $display_content = get_option('ng_slider_display_content') ? true: false ;
+    if(get_option('ng_slider_order') == 'reverse')
+        $images = array_reverse($images);
 ?>
 <div id="<?php echo $gallery->anchor ?>" class="flexslider">
    <ul class="slides">
@@ -41,9 +43,15 @@ Follow variables are useable :
 <script type="text/javascript" defer="defer">
     jQuery(document).ready(function($) {
       $('.flexslider').flexslider({
-        //animation: "slide",
-        slideshowSpeed: 6000,
-        directionNav:true,
+        <? echo "slideshowSpeed: ".(get_option('ng_slider_slideshow_speed') ? get_option('ng_slider_slideshow_speed')*1000: 6000).","?>
+        <? //echo "direction: '".(get_option('ng_slider_direction') ? get_option('ng_slider_direction'): 'horizontal')."',"?>
+        <? if(get_option('ng_slider_order') == 'random')
+                echo 'randomize:true,';
+           
+        ?>
+        <? echo "directionNav: ".(get_option('ng_slider_direction_nav') ? 'true': 'false').","?>
+        <? echo "controlNav: ".(get_option('ng_slider_pagination') ? 'true': 'false').","?>
+        <? //echo "animation: '".(get_option('ng_slider_animation') ? get_option('ng_slider_animation'): 'fade')."',"?>
         pauseOnHover:true
   });
     });	
