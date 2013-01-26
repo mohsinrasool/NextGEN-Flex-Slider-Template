@@ -90,5 +90,8 @@ Please check out our tutorial on how to use [NextGen Gallery Templates](http://w
 
 == Upgrade Notice ==
 
+= 1.3 =
+* Added Feature of slide's randomisation and delay. Toggling of Nex/Prev and Pagination Navigation
+
 = 1.2 =
 Fixes blank screen bug when activated. It may also conflict with another plugin.

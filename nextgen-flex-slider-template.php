@@ -62,8 +62,8 @@ function nggFlexSliderview_activate(){
         //add_option( 'ng_slider_direction', 'horizontal' );
     if(!get_option('ng_slider_direction_nav'))
         add_option( 'ng_slider_direction_nav', '1' );
-    if(!get_option('ng_slider_animation'))
-        add_option( 'ng_slider_animation', 'bullet' );
+    if(!get_option('ng_slider_pagination'))
+        add_option( 'ng_slider_pagination', 'bullet' );
     
 }
 register_activation_hook( __FILE__, 'nggFlexSliderview_activate' );
