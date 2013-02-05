@@ -5,7 +5,7 @@ Plugin URI: http://wpdevsnippets.com/nextgen-flex-image-content-slider-template/
 Description: Add a "sliderview" template for the NextGen gallery. Use the shortcode [nggallery id=x template="sliderview"] to display images as the slider.
 Author: Mohsin Rasool
 Author URI: http://wpdevsnippets.com
-Version: 1.3
+Version: 1.4
 */
 
 include 'admin-settings.php';
@@ -30,10 +30,12 @@ if (!class_exists('nggSliderview')) {
         }
 
         function load_styles() {
-            if(get_option('ng_slider_theme'))
-                wp_enqueue_style('nggsliderview-bluecss', plugins_url($this->plugin_name.'css/blue.css'), false, '1.0.1', 'screen');
-            else
+            if(!get_option('ng_slider_theme'))
                 wp_enqueue_style('nggsliderview-css', plugins_url($this->plugin_name.'css/black.css'), false, '1.0.1', 'screen');
+            else if(get_option('ng_slider_theme') == 2)
+                wp_enqueue_style('nggsliderview-greycss', plugins_url($this->plugin_name.'css/grey.css'), false, '1.0.1', 'screen');
+            else
+                wp_enqueue_style('nggsliderview-bluecss', plugins_url($this->plugin_name.'css/blue.css'), false, '1.0.1', 'screen');
         }
 
         function load_scripts() {
@@ -64,6 +66,10 @@ function nggFlexSliderview_activate(){
         add_option( 'ng_slider_direction_nav', '1' );
     if(!get_option('ng_slider_pagination'))
         add_option( 'ng_slider_pagination', 'bullet' );
+
+    if(!get_option('ng_slider_us_width_for_img_slider'))
+        add_option( 'ng_slider_us_width_for_img_slider', '0' );
+
     
 }
 register_activation_hook( __FILE__, 'nggFlexSliderview_activate' );

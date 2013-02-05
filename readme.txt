@@ -4,7 +4,7 @@ Donate link: http://mohsinrasool.wordpress.com/2012/12/21/nextgen-flex-slider-te
 Tags: nextgen, gallery, slider, slideshow, nextgen-gallery, template, flexslider, nextgen slider, image slider, content slider, nextgen image slider, nextgen content slider, featured slider, nextgen featured slider
 Requires at least: 3.0.1
 Tested up to: 3.5
-Stable tag: 1.3
+Stable tag: 1.4
 Author: Mohsin Rasool
 License: GPLv2
 
@@ -69,6 +69,10 @@ Please check out our tutorial on how to use [NextGen Gallery Templates](http://w
 
 == Changelog ==
 
+= 1.4 =
+* Added Grey Theme
+* Check to apply width for image slider
+
 = 1.3 =
 * Feature of randomization of slides
 * Feature of setting delay between transitions
@@ -89,6 +93,10 @@ Please check out our tutorial on how to use [NextGen Gallery Templates](http://w
 * First Revision
 
 == Upgrade Notice ==
+
+= 1.4 =
+* Added Grey Theme
+* Check to apply width for image slider
 
 = 1.3 =
 * Added Feature of slide's randomisation and delay. Toggling of Nex/Prev and Pagination Navigation

@@ -58,13 +58,21 @@ Follow variables are useable :
 </script>
 <style>
     <?
+    $img_width = get_option('ng_slider_image_width');
+    if(is_numeric($img_width) && !empty($img_width))
+        $img_width = $img_width.'px';
+    
     if($display_content){
-        $img_width = get_option('ng_slider_image_width');
+        
         $txt_width = get_option('ng_slider_text_width');
         if(is_numeric((int) $img_width) && ((int) $img_width)>1)
             echo '.flexslider .feature-image {width:'.$img_width.' !important;}';
         if(is_numeric((int) $txt_width) && ((int) $txt_width)>1)
             echo '.flexslider .flex-caption {width:'.$txt_width.' !important;}';
+    }
+    else {
+        if(get_option('ng_slider_use_width_for_img_slider') )
+            echo '.flexslider {width:'.$img_width.' !important;}';
     }
     ?>
     
