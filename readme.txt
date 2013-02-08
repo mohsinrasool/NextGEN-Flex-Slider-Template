@@ -1,10 +1,10 @@
-=== NextGEN Flex Slider Template ===
+=== Responsive NextGEN Flex Slider Template ===
 Contributors: mohsinrasool
 Donate link: http://mohsinrasool.wordpress.com/2012/12/21/nextgen-flex-slider-template/
-Tags: nextgen, gallery, slider, slideshow, nextgen-gallery, template, flexslider, nextgen slider, image slider, content slider, nextgen image slider, nextgen content slider, featured slider, nextgen featured slider
+Tags: nextgen, gallery, slider, slideshow, nextgen-gallery, nextgen template, responsive slider, responsive nextgen slider, flexslider, nextgen slider, image slider, content slider, nextgen image slider, nextgen content slider, featured slider, nextgen featured slider
 Requires at least: 3.0.1
 Tested up to: 3.5
-Stable tag: 1.4
+Stable tag: 1.5
 Author: Mohsin Rasool
 License: GPLv2
 
@@ -14,7 +14,9 @@ Adds "sliderview" template for the NextGen gallery. Use the shortcode [nggallery
 
 This plugin adds "sliderview" template for the NextGen gallery. Use the shortcode [nggallery id=x template="sliderview"] to display images as the slider. You can visit Settings -> NextGen Slider to select theme, toggle between image and content slider and change width of the image or content area.
 
-If you are not sure how to set up this slider please read our tutorial on [creating and using gallery templates](http://wpdevsnippets.com/create-nextgen-gallery-and-templates/ "NextGen Gallery Templates")
+If you are not sure how to set up this slider please read our tutorial on [creating and using gallery templates](http://wpdevsnippets.com/create-nextgen-gallery-and-templates/ "Create and Use NextGen Gallery Templates")
+
+[Documentation](http://wpdevsnippets.com/nextgen-flex-image-content-slider-template/ "NextGen Responsive Flex Slider Documentation") | [Support](http://wordpress.org/support/plugin/nextgen-flex-slider-template "NextGen Flex Slider Support")
 
 Note: It requires NextGen Gallery plugin that can be downloaded from http://wordpress.org/extend/plugins/nextgen-gallery.
 
@@ -60,6 +62,10 @@ Both, You can configure it to be either a content slider or an image only slider
 
 Please check out our tutorial on how to use [NextGen Gallery Templates](http://wpdevsnippets.com/create-nextgen-gallery-and-templates/ "NextGen Gallery Templates") and set up slider for it.
 
+= Where is the slider documentation? =
+
+Please click here to visit the [documentation](http://wpdevsnippets.com/nextgen-flex-image-content-slider-template/ "NextGen Responsive Flex Slider Documentation").
+
 == Screenshots ==
 
 1. Content Slider
@@ -68,6 +74,9 @@ Please check out our tutorial on how to use [NextGen Gallery Templates](http://w
 4. Populating Content for images
 
 == Changelog ==
+
+= 1.5 =
+* Fixed a critical bug of breaking words in content slider
 
 = 1.4 =
 * Added Grey Theme
@@ -93,6 +102,9 @@ Please check out our tutorial on how to use [NextGen Gallery Templates](http://w
 * First Revision
 
 == Upgrade Notice ==
+
+= 1.5 =
+* Fixed a critical bug of breaking words in content slider
 
 = 1.4 =
 * Added Grey Theme
