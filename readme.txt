@@ -4,7 +4,7 @@ Donate link: http://mohsinrasool.wordpress.com/2012/12/21/nextgen-flex-slider-te
 Tags: nextgen, gallery, slider, slideshow, nextgen-gallery, nextgen template, responsive slider, responsive nextgen slider, flexslider, nextgen slider, image slider, content slider, nextgen image slider, nextgen content slider, featured slider, nextgen featured slider
 Requires at least: 3.0.1
 Tested up to: 3.5
-Stable tag: 1.5
+Stable tag: 1.6
 Author: Mohsin Rasool
 License: GPLv2
 
@@ -19,6 +19,53 @@ If you are not sure how to set up this slider please read our tutorial on [creat
 [Documentation](http://wpdevsnippets.com/nextgen-flex-image-content-slider-template/ "NextGen Responsive Flex Slider Documentation") | [Support](http://wordpress.org/support/plugin/nextgen-flex-slider-template "NextGen Flex Slider Support")
 
 Note: It requires NextGen Gallery plugin that can be downloaded from http://wordpress.org/extend/plugins/nextgen-gallery.
+
+= Attributes =
+These will work only when shortcode is used on post/page contents.
+
+    theme: 
+    (string) (optional) Theme of the slider
+    Possible Values: 'black', 'blue' or 'grey'
+
+    display_content: 
+    (boolean) (optional) Toggle between content and image slider. 
+    Possible Values: 0 or 1
+
+    order: 
+    (string) (optional) Select order of the images. 
+    Possible Values: empty or "random"
+
+    slideshow_speed: 
+    (numeric) (optional) Delay in animation 
+    Possible Values: Any numeric value
+
+    direction_nav: 
+    (boolean) (optional) Enable or disable next/prev navigation arrows
+    Possible Values: 1 or 0
+
+    pagination: 
+    (boolean) (optional) Enable or disable pagination bullets at bottom
+    Possible Values: 1 or 0
+
+    image_width: 
+    (string) (optional) Set width of the images
+    Possible Values: 100px or 100% or 80% etc
+
+    text_width: 
+    (string) (optional) Set width of the content area (in case of content slider)
+    Possible Values: 100px or 20% etc
+
+    background: 
+    (string) (optional) Set background color of the slider 
+    Possible Values: Any valid HTML Code. #fff or #23423f or white or black 
+
+    use_width_for_img_slider: 
+    (boolean) (optional) To use the specifed img_width for image slider too.
+    Possible Values: 0 or 1
+
+    disable_img_stretching: 
+    (boolean) (optional) Images in image slider are set to 100% width which may cause stretch for small or portrait size images. Please enable this option to fix it.
+    Possible Values: 0 or 1
 
 == Usage ==
 
@@ -75,6 +122,11 @@ Please click here to visit the [documentation](http://wpdevsnippets.com/nextgen-
 
 == Changelog ==
 
+= 1.6 =
+* Allow multiple slider with different options on the same page or different pages
+* Centering the portrait images
+* Added option to change the background
+
 = 1.5 =
 * Fixed a critical bug of breaking words in content slider
 
@@ -102,6 +154,11 @@ Please click here to visit the [documentation](http://wpdevsnippets.com/nextgen-
 * First Revision
 
 == Upgrade Notice ==
+
+= 1.6 =
+* Allow multiple slider with different options on the same page or different pages
+* Centering the portrait images
+* Added option to change the background
 
 = 1.5 =
 * Fixed a critical bug of breaking words in content slider

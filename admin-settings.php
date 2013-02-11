@@ -20,17 +20,21 @@ function ng_slider_register_plugin_settings() {
     register_setting('ng_slider_options', 'ng_slider_slideshow_speed');
     register_setting('ng_slider_options', 'ng_slider_order');
     register_setting('ng_slider_options', 'ng_slider_use_width_for_img_slider');
+    register_setting('ng_slider_options', 'ng_slider_disable_img_stretching');
     //register_setting('ng_slider_options', 'ng_slider_direction');
     //register_setting('ng_slider_options', 'ng_slider_animation');
     register_setting('ng_slider_options', 'ng_slider_direction_nav');
     register_setting('ng_slider_options', 'ng_slider_pagination');
+    register_setting('ng_slider_options', 'ng_slider_background');
         
     add_settings_section('ng_slider_general_options', 'General Options', 'ng_slider_general_options_code', 'ng_slider_general_options');
     add_settings_field('ng_slider_theme', 'Theme', 'ng_slider_theme_code', 'ng_slider_general_options', 'ng_slider_general_options');
     add_settings_field('ng_slider_display_content', 'Display', 'ng_slider_display_content_code', 'ng_slider_general_options', 'ng_slider_general_options');
     add_settings_field('ng_slider_image_width', 'Image Width', 'ng_slider_image_width_code', 'ng_slider_general_options', 'ng_slider_general_options');
     add_settings_field('ng_slider_use_width_for_img_slider', '', 'ng_slider_use_width_for_img_slider', 'ng_slider_general_options', 'ng_slider_general_options');
+    add_settings_field('ng_slider_disable_img_stretching', '', 'ng_slider_disable_img_stretching', 'ng_slider_general_options', 'ng_slider_general_options');
     add_settings_field('ng_slider_text_width', 'Content Width', 'ng_slider_text_width_code', 'ng_slider_general_options', 'ng_slider_general_options');
+    add_settings_field('ng_slider_background', 'Background Color', 'ng_slider_background', 'ng_slider_general_options', 'ng_slider_general_options');
     add_settings_field('ng_slider_slideshow_speed', 'Animation Delay', 'ng_slider_slideshow_speed_code', 'ng_slider_general_options', 'ng_slider_general_options');
     add_settings_field('ng_slider_order', 'Order', 'ng_slider_order_code', 'ng_slider_general_options', 'ng_slider_general_options');
     //add_settings_field('ng_slider_direction', 'Sliding Direction', 'ng_slider_direction_code', 'ng_slider_general_options', 'ng_slider_general_options');
@@ -41,7 +45,13 @@ function ng_slider_register_plugin_settings() {
 }
 
 function ng_slider_general_options_code() {
-    echo '<p>' . _e("This section allow you to configure NextGen Slider Options") . '</p>';
+    echo '<p>' . _e("This section allow you to configure NextGen Slider Options") . '. <a href="#shotcode-help-section">Click here to scroll down</a> to see additional shortcodes for the customization of individual slider.</p>';
+}
+function ng_slider_background() {
+    echo '<input id="ng_slider_background" name="ng_slider_background" type="text" value="' . get_option("ng_slider_background") . '" size=20 /> e.g. any valid HTML color. #ffffff, #454545, transparent, white, grey etc. <br />';
+}
+function ng_slider_disable_img_stretching() {
+    echo '<label><input id="ng_slider_disable_img_stretching" name="ng_slider_disable_img_stretching" type="checkbox" value="1" ' . checked(get_option("ng_slider_disable_img_stretching"), '1', false ) . ' /> Disable image stretching. If images are pixelated pease check this option.</label>';
 }
 
 function ng_slider_image_width_code() {
@@ -118,8 +128,54 @@ function ng_slider_admin_output() {
             settings_fields('ng_slider_options');
             do_settings_sections('ng_slider_general_options');
             ?>
+        <a name="shotcode-help-section"></a>
             <p class="submit"><input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" /></p>
         </form>
+        <h2>Additional Attributes of [nggallery]</h2>
+        <p><strong>theme:</strong> <br>
+        (string) (optional) Theme of the slider<br>
+        <em>Possible Values</em>: 'black', 'blue' or 'grey'</p>
+        
+        <p><strong>display_content:</strong> <br>
+        (boolean) (optional) Toggle between content and image slider. <br>
+        <em>Possible Values</em>: 0 or 1</p>
+
+        <p><strong>order:</strong> <br>
+        (string) (optional) Select order of the images.  <br>
+        <em>Possible Values</em>: empty or "random"</p>
+
+        <p><strong>slideshow_speed:</strong> <br>
+        (numeric) (optional) Delay in animation <br>
+        <em>Possible Values</em>: Any numeric value</p>
+
+        <p><strong>direction_nav:</strong> <br>
+        (boolean) (optional) Enable or disable next/prev navigation arrows<br>
+        <em>Possible Values</em>: 0 or 1</p>
+
+        <p><strong>pagination:</strong> <br>
+        (boolean) (optional) Enable or disable pagination bullets at bottom<br>
+        <em>Possible Values</em>: 0 or 1</p>
+
+        <p><strong>image_width:</strong> <br>
+        (string) (optional) Set width of the images<br>
+        <em>Possible Values</em>: 100px or 100% or 80% etc</p>
+        Please note "px" or "%" at the end.
+
+        <p><strong>text_width:</strong> <br>
+        (string) (optional) Set width of the content area (in case of content slider)<br>
+        <em>Possible Values</em>: 100px or 20% etc</p>
+
+        <p><strong>background:</strong> <br>
+        (string) (optional) Set background color of the slider <br>
+        <em>Possible Values</em>: Any valid HTML Code. #fff or #23423f or white or black </p>
+
+        <p><strong>use_width_for_img_slider:</strong> <br>
+        (boolean) (optional) To use the specifed img_width for image slider too.<br>
+        <em>Possible Values</em>: 0 or 1</p>
+        
+        <p><strong>disable_img_stretching:</strong> <br>
+        (boolean) (optional) Images in image slider are set to 100% width which may cause stretch for small or portrait size images. Please enable this option to fix it.<br>
+        <em>Possible Values</em>: 0 or 1</p>
     </div>
                     </div>
                     <div class="postbox-container" id="side-container" style="width:24%;">
