@@ -14,7 +14,8 @@ Follow variables are useable :
 
 ?>
 <?php if (!defined ('ABSPATH')) die ('No direct access allowed'); ?><?php if (!empty ($gallery)) : ?>
-<?
+<?php
+
     //  Parse the attributes
     $defaults = array (
         'ng_slider_theme' => get_option('ng_slider_theme'),
@@ -27,9 +28,13 @@ Follow variables are useable :
         'ng_slider_background' => get_option('ng_slider_background'),
         'ng_slider_text_width' => get_option('ng_slider_text_width'),
         'ng_slider_use_width_for_img_slider' => get_option('ng_slider_use_width_for_img_slider'),
-        'ng_slider_disable_img_stretching' => get_option('ng_slider_disable_img_stretching')
+        'ng_slider_disable_img_stretching' => get_option('ng_slider_disable_img_stretching'),
+        'ng_slider_link_title' => get_option('ng_slider_link_title'),
+        'ng_slider_link_image' => get_option('ng_slider_link_image'),
+        'ng_slider_link_new_window' => get_option('ng_slider_link_new_window')
     );
     
+
     $ng_slider_theme_names = array('black','blue','grey');
         
     global $post;
@@ -61,6 +66,7 @@ Follow variables are useable :
             }
         }
     }
+
     extract($defaults);
 
     if(is_numeric($ng_slider_theme))
@@ -70,20 +76,29 @@ Follow variables are useable :
     if($ng_slider_order == 'reverse')
         $images = array_reverse($images);
 ?>
-<div id="<?php echo $gallery->anchor ?>" class="flexslider <?=$ng_slider_theme?>">
+<div id="<?php echo $gallery->anchor ?>" class="flexslider <?php echo $ng_slider_theme?>">
    <ul class="slides">
   	<!-- Thumbnails -->
-	<?php foreach ($images as $image) : ?>		
-	<li class="<? if(!$display_content) echo 'full-width';?>">
+	<?php foreach ($images as $image) : ?>
+	<li class="<?php if(!$display_content) echo 'full-width';?>">
             <div class="feature-image "> 
-                <img class="full home_feature" src="<?php echo $image->imageURL ?>" alt="<?php echo $image->alttext ?>" title="<?php echo $image->alttext ?>">
+                <?php if(!empty($image->ngg_custom_fields['image_link']) && $ng_slider_link_image) { ?>
+                    <a href="<?php echo $image->ngg_custom_fields['image_link'] ?>" <?php echo $ng_slider_link_new_window ? 'target="_blank"':'' ?> ><img class="full home_feature" src="<?php echo $image->imageURL ?>" alt="<?php echo $image->alttext ?>" title="<?php echo $image->alttext ?>"></a>
+                <?php }else{ ?>
+                    <img class="full home_feature" src="<?php echo $image->imageURL ?>" alt="<?php echo $image->alttext ?>" title="<?php echo $image->alttext ?>">
+                <?php } ?>
+                    
             </div>
-            <? if($display_content) {?>
+            <?php if($display_content) {?>
             <div class="flex-caption">
-                <h2 class="post-title"><?php echo ($image->alttext) ?></h2>
+                <?php if(!empty($image->ngg_custom_fields['image_link']) && $ng_slider_link_title) { ?>
+                    <a href="<?php echo $image->ngg_custom_fields['image_link'] ?>" <?php echo $ng_slider_link_new_window ? 'target="_blank"':'' ?> ><h2 class="post-title"><?php echo ($image->alttext) ?></h2></a>
+                <?php }else{ ?>
+                    <h2 class="post-title"><?php echo ($image->alttext) ?></h2>
+                <?php } ?>
                 <p><?php echo html_entity_decode($image->description) ?></p>
             </div>
-            <? } ?>
+            <?php } ?>
 	</li>
  	<?php endforeach; ?>
   </ul>
@@ -93,21 +108,21 @@ Follow variables are useable :
 <script type="text/javascript" defer="defer">
     jQuery(document).ready(function($) {
       $('#<?php echo $gallery->anchor ?>').flexslider({
-        <? echo "slideshowSpeed: ".($ng_slider_slideshow_speed ? $ng_slider_slideshow_speed*1000: 6000).","?>
-        <? //echo "direction: '".(get_option('ng_slider_direction') ? get_option('ng_slider_direction'): 'horizontal')."',"?>
-        <? if($ng_slider_order == 'random')
+        <?php echo "slideshowSpeed: ".($ng_slider_slideshow_speed ? $ng_slider_slideshow_speed*1000: 6000).","?>
+        <?php //echo "direction: '".(get_option('ng_slider_direction') ? get_option('ng_slider_direction'): 'horizontal')."',"?>
+        <?php if($ng_slider_order == 'random')
                 echo 'randomize:true,';
            
         ?>
-        <? echo "directionNav: ".($ng_slider_direction_nav ? 'true': 'false').","?>
-        <? echo "controlNav: ".($ng_slider_pagination ? 'true': 'false').","?>
-        <? //echo "animation: '".(get_option('ng_slider_animation') ? get_option('ng_slider_animation'): 'fade')."',"?>
+        <?php echo "directionNav: ".($ng_slider_direction_nav ? 'true': 'false').","?>
+        <?php echo "controlNav: ".($ng_slider_pagination ? 'true': 'false').","?>
+        <?php //echo "animation: '".(get_option('ng_slider_animation') ? get_option('ng_slider_animation'): 'fade')."',"?>
         pauseOnHover:true
   });
     });	
 </script>
 <style>
-    <?
+    <?php
     $img_width = $ng_slider_image_width;
     $bg_color = $ng_slider_background;
     if(is_numeric($img_width) && !empty($img_width))

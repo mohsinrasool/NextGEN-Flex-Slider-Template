@@ -16,6 +16,7 @@ function ng_slider_register_plugin_settings() {
     register_setting('ng_slider_options', 'ng_slider_theme');
     register_setting('ng_slider_options', 'ng_slider_display_content');
     register_setting('ng_slider_options', 'ng_slider_image_width');
+    //register_setting('ng_slider_options', 'ng_slider_image_height');
     register_setting('ng_slider_options', 'ng_slider_text_width');
     register_setting('ng_slider_options', 'ng_slider_slideshow_speed');
     register_setting('ng_slider_options', 'ng_slider_order');
@@ -23,6 +24,9 @@ function ng_slider_register_plugin_settings() {
     register_setting('ng_slider_options', 'ng_slider_disable_img_stretching');
     //register_setting('ng_slider_options', 'ng_slider_direction');
     //register_setting('ng_slider_options', 'ng_slider_animation');
+    register_setting('ng_slider_options', 'ng_slider_link_title');
+    register_setting('ng_slider_options', 'ng_slider_link_image');
+    register_setting('ng_slider_options', 'ng_slider_link_new_window');
     register_setting('ng_slider_options', 'ng_slider_direction_nav');
     register_setting('ng_slider_options', 'ng_slider_pagination');
     register_setting('ng_slider_options', 'ng_slider_background');
@@ -34,6 +38,10 @@ function ng_slider_register_plugin_settings() {
     add_settings_field('ng_slider_use_width_for_img_slider', '', 'ng_slider_use_width_for_img_slider', 'ng_slider_general_options', 'ng_slider_general_options');
     add_settings_field('ng_slider_disable_img_stretching', '', 'ng_slider_disable_img_stretching', 'ng_slider_general_options', 'ng_slider_general_options');
     add_settings_field('ng_slider_text_width', 'Content Width', 'ng_slider_text_width_code', 'ng_slider_general_options', 'ng_slider_general_options');
+    //add_settings_field('ng_slider_image_height', 'Limit Image Height', 'ng_slider_image_height', 'ng_slider_general_options', 'ng_slider_general_options');
+    add_settings_field('ng_slider_link_title', 'Linking Sliders', 'ng_slider_link_title', 'ng_slider_general_options', 'ng_slider_general_options');
+    add_settings_field('ng_slider_link_image', '', 'ng_slider_link_image', 'ng_slider_general_options', 'ng_slider_general_options');
+    add_settings_field('ng_slider_link_new_window', '', 'ng_slider_link_new_window', 'ng_slider_general_options', 'ng_slider_general_options');
     add_settings_field('ng_slider_background', 'Background Color', 'ng_slider_background', 'ng_slider_general_options', 'ng_slider_general_options');
     add_settings_field('ng_slider_slideshow_speed', 'Animation Delay', 'ng_slider_slideshow_speed_code', 'ng_slider_general_options', 'ng_slider_general_options');
     add_settings_field('ng_slider_order', 'Order', 'ng_slider_order_code', 'ng_slider_general_options', 'ng_slider_general_options');
@@ -52,6 +60,20 @@ function ng_slider_background() {
 }
 function ng_slider_disable_img_stretching() {
     echo '<label><input id="ng_slider_disable_img_stretching" name="ng_slider_disable_img_stretching" type="checkbox" value="1" ' . checked(get_option("ng_slider_disable_img_stretching"), '1', false ) . ' /> Disable image stretching. If images are pixelated pease check this option.</label>';
+}
+function ng_slider_link_title() {
+    echo 'Follow <a href="http://wpdevsnippets/linking-image-and-title-nextgen-flex-slider-template" target="_blank">this tutorial</a> to set it up.<br /><label><input id="ng_slider_link_title" name="ng_slider_link_title" type="checkbox" value="1" ' . checked(get_option("ng_slider_link_title"), '1', false ) . ' /> Link title to specified URL. </label>';
+}
+function ng_slider_link_image() {
+    echo '<label><input id="ng_slider_link_image" name="ng_slider_link_image" type="checkbox" value="1" ' . checked(get_option("ng_slider_link_image"), '1', false ) . ' /> Link image to specified URL. </label>';
+}
+function ng_slider_link_new_window() {
+    echo '<label><input id="ng_slider_link_new_window" name="ng_slider_link_new_window" type="checkbox" value="1" ' . checked(get_option("ng_slider_link_new_window"), '1', false ) . ' /> Open links in a new window</label>';
+}
+
+
+function ng_slider_image_height() {
+    echo '<input id="ng_slider_image_height" name="ng_slider_image_height" type="text" value="' . get_option("ng_slider_image_height") . '" /> e.g. any valid height value. 300px etc<br />';
 }
 
 function ng_slider_image_width_code() {
@@ -164,6 +186,18 @@ function ng_slider_admin_output() {
         <p><strong>text_width:</strong> <br>
         (string) (optional) Set width of the content area (in case of content slider)<br>
         <em>Possible Values</em>: 100px or 20% etc</p>
+
+        <p><strong>link_title:</strong> <br>
+        (boolean) (optional) Enable or disable whether title should be linked or not (for content slider). Please follow <a href="http://wpdevsnippets/linking-image-and-title-nextgen-flex-slider-template" target="_blank">this tutorial</a> to set it up<br>
+        <em>Possible Values</em>: 0 or 1</p>
+
+        <p><strong>link_image:</strong> <br>
+        (boolean) (optional) Enable or disable whether image should be linked or not. Please follow <a href="http://wpdevsnippets/linking-image-and-title-nextgen-flex-slider-template" target="_blank">this tutorial</a> to set it up<br>
+        <em>Possible Values</em>: 0 or 1</p>
+
+        <p><strong>link_new_window:</strong> <br>
+        (boolean) (optional) Enable to open slider url to be opened in a new window. Please follow <a href="http://wpdevsnippets/linking-image-and-title-nextgen-flex-slider-template" target="_blank">this tutorial</a> to set it up<br>
+        <em>Possible Values</em>: 0 or 1</p>
 
         <p><strong>background:</strong> <br>
         (string) (optional) Set background color of the slider <br>

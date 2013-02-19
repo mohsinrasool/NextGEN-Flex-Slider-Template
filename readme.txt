@@ -4,7 +4,7 @@ Donate link: http://mohsinrasool.wordpress.com/2012/12/21/nextgen-flex-slider-te
 Tags: nextgen, gallery, slider, slideshow, nextgen-gallery, nextgen template, responsive slider, responsive nextgen slider, flexslider, nextgen slider, image slider, content slider, nextgen image slider, nextgen content slider, featured slider, nextgen featured slider
 Requires at least: 3.0.1
 Tested up to: 3.5
-Stable tag: 1.6
+Stable tag: 1.7
 Author: Mohsin Rasool
 License: GPLv2
 
@@ -41,11 +41,11 @@ These will work only when shortcode is used on post/page contents.
 
     direction_nav: 
     (boolean) (optional) Enable or disable next/prev navigation arrows
-    Possible Values: 1 or 0
+    Possible Values: 0 or 1
 
     pagination: 
     (boolean) (optional) Enable or disable pagination bullets at bottom
-    Possible Values: 1 or 0
+    Possible Values: 0 or 1
 
     image_width: 
     (string) (optional) Set width of the images
@@ -54,6 +54,18 @@ These will work only when shortcode is used on post/page contents.
     text_width: 
     (string) (optional) Set width of the content area (in case of content slider)
     Possible Values: 100px or 20% etc
+
+    link_title: 
+    (boolean) (optional) Enable or disable whether title should be linked or not (for content slider). Please follow [this tutorial](http://wpdevsnippets/linking-image-and-title-nextgen-flex-slider-template "Linking Flex Sliders") to set it up
+    Possible Values: 0 or 1
+
+    link_image: 
+    (boolean) (optional) Enable or disable whether image should be linked or not. Please follow [this tutorial](http://wpdevsnippets/linking-image-and-title-nextgen-flex-slider-template "Linking Flex Sliders") to set it up
+    Possible Values: 0 or 1
+
+    link_new_window: 
+    (boolean) (optional) Enable to open slider url to be opened in a new window. Please follow [this tutorial](http://wpdevsnippets/linking-image-and-title-nextgen-flex-slider-template "Linking Flex Sliders") to set it up
+    Possible Values: 0 or 1
 
     background: 
     (string) (optional) Set background color of the slider 
@@ -69,7 +81,7 @@ These will work only when shortcode is used on post/page contents.
 
 == Usage ==
 
-[nggallery id=x template="sliderview"]
+[nggallery id=x template="sliderview" direction_nav="0"]
 
 == Installation ==
 
@@ -122,6 +134,10 @@ Please click here to visit the [documentation](http://wpdevsnippets.com/nextgen-
 
 == Changelog ==
 
+= 1.7 =
+* Added feature to link the images and titles
+* Fixed open_short_tag bug
+
 = 1.6 =
 * Allow multiple slider with different options on the same page or different pages
 * Centering the portrait images
@@ -155,6 +171,10 @@ Please click here to visit the [documentation](http://wpdevsnippets.com/nextgen-
 
 == Upgrade Notice ==
 
+= 1.7 =
+* Added feature to link the images and titles
+* Fixed open_short_tag bug
+
 = 1.6 =
 * Allow multiple slider with different options on the same page or different pages
 * Centering the portrait images
@@ -171,4 +191,4 @@ Please click here to visit the [documentation](http://wpdevsnippets.com/nextgen-
 * Added Feature of slide's randomisation and delay. Toggling of Nex/Prev and Pagination Navigation
 
 = 1.2 =
-Fixes blank screen bug when activated. It may also conflict with another plugin.
+* Fixes blank screen bug when activated. It may also conflict with another plugin.
