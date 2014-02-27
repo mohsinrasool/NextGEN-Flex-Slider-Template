@@ -16,9 +16,12 @@ This plugin adds "sliderview" template for the NextGen gallery. Use the shortcod
 
 If you are not sure how to set up this slider please read our tutorial on [creating and using gallery templates](http://wpdevsnippets.com/create-nextgen-gallery-and-templates/ "Create and Use NextGen Gallery Templates")
 
-[Documentation](http://wpdevsnippets.com/nextgen-flex-image-content-slider-template/ "NextGen Responsive Flex Slider Documentation") | [Support](http://wordpress.org/support/plugin/nextgen-flex-slider-template "NextGen Flex Slider Support")
+[Documentation](http://wpdevsnippets.com/nextgen-flex-image-content-slider-template/ "NextGen Responsive Flex Slider Documentation") | [Support](https://github.com/mohsinrasool/NextGEN-Flex-Slider-Template "NextGen Flex Slider Support")
 
 Note: It requires NextGen Gallery plugin that can be downloaded from http://wordpress.org/extend/plugins/nextgen-gallery.
+
+Note: Due to time constraints, I am not able to update or fix issues. So, I decided to host it on GitHub. If anyone fixes an issue, please take time to update the repository. Thanks
+[NextGEN Flex Slider Template](https://github.com/mohsinrasool/NextGEN-Flex-Slider-Template "NextGEN Flex Slider Template")
 
 = Attributes =
 These will work only when shortcode is used on post/page contents.
