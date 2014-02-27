@@ -1,3 +1,17 @@
+=== Responsive NextGEN Flex Slider Template ===
+Contributors: mohsinrasool
+Donate link: http://mohsinrasool.wordpress.com/2012/12/21/nextgen-flex-slider-template/
+Tags: nextgen, gallery, slider, slideshow, nextgen-gallery, nextgen template, responsive slider, responsive nextgen slider, flexslider, nextgen slider, image slider, content slider, nextgen image slider, nextgen content slider, featured slider, nextgen featured slider
+Requires at least: 3.0.1
+Tested up to: 3.5
+Stable tag: 1.7
+Author: Mohsin Rasool
+License: GPLv2
+
+Adds "sliderview" template for the NextGen gallery. Use the shortcode [nggallery id=x template="sliderview"]
+
+== Description ==
+
 This plugin adds "sliderview" template for the NextGen gallery. Use the shortcode [nggallery id=x template="sliderview"] to display images as the slider. You can visit Settings -> NextGen Slider to select theme, toggle between image and content slider and change width of the image or content area.
 
 If you are not sure how to set up this slider please read our tutorial on [creating and using gallery templates](http://wpdevsnippets.com/create-nextgen-gallery-and-templates/ "Create and Use NextGen Gallery Templates")
