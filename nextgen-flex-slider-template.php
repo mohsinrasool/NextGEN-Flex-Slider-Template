@@ -5,7 +5,7 @@ Plugin URI: http://wpdevsnippets.com/nextgen-flex-image-content-slider-template/
 Description: Add a "sliderview" template for the NextGen gallery. Use the shortcode [nggallery id=x template="sliderview"] to display images as the slider.
 Author: Mohsin Rasool
 Author URI: http://wpdevsnippets.com
-Version: 1.7
+Version: 1.8
 */
 
 include 'admin-settings.php';
@@ -49,8 +49,10 @@ if (!class_exists('nggSliderview')) {
     }
 
     // Start this plugin once all other plugins are fully loaded
-    add_action( 'plugins_loaded', create_function( '', 'global $nggSliderview; $nggSliderview = new nggSliderview();' ) );
-
+    add_action( 'plugins_loaded', function() {
+        global $nggSliderview;
+        $nggSliderview = new nggSliderview();
+     });
 }
 
 // Plugin Activation Hook
