@@ -4,7 +4,7 @@ Donate link: http://mohsinrasool.wordpress.com/2012/12/21/nextgen-flex-slider-te
 Tags: nextgen, gallery, slider, slideshow, nextgen-gallery, nextgen template, responsive slider, responsive nextgen slider, flexslider, nextgen slider, image slider, content slider, nextgen image slider, nextgen content slider, featured slider, nextgen featured slider
 Requires at least: 3.0.1
 Tested up to: 3.5
-Stable tag: 1.8
+Stable tag: 1.9
 Author: Mohsin Rasool
 License: GPLv2
 
